@@ -1,7 +1,7 @@
-<div id="star_<%= book.id %>"></div>
+<div id="rate_<%= book.id %>"></div>
 <script>
 $(document).on('turbolinks:load', function() {
-  let elem = document.querySelector('#star_<%= book.id %>');
+  let elem = document.querySelector('#rate_<%= book.id %>');
   if (elem == null) return;
 
   elem.innerHTML = "";
@@ -10,7 +10,8 @@ $(document).on('turbolinks:load', function() {
     starOff: "<%= asset_path('star-off.png') %>",
     starHalf: "<%= asset_path('star-half.png') %>",
     score: "<%= book.star %>",
-    readOnly: true,　　　　#readOnlyパラメータが設定されているため、ユーザーは評価を変更できない
+    readOnly: true, //readOnlyパラメータが設定されているため、ユーザーは評価を変更できない
+
   };
   raty(elem, opt);
 });
