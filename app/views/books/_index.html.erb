@@ -21,20 +21,7 @@
         </td>
 
         <!--星レビュー-->
-        <td>
-          <div id="star-rate<%= book.id%>"> </td>
-          <script>
-            $('#star-rate<%= book.id %>').empty();
-            $('#star-rate<%= book.id%>').raty({
-              size      : 36,
-              starOff   : '<%= asset_path('star-off.png') %>',
-              starOn    : '<%= asset_path('star-on.png') %>',
-              half      : false,
-              readOnly: true,
-              score: <%= book.star %>,
-            });
-          </script>
-          </div>
+        <td><%= render "books/static.rate", book: book %></td>
         <!--ここまで-->
 
         <td><%= render "book_comments/counter", book: book %></td>
